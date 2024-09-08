@@ -13,11 +13,20 @@ body {
 }
 
 a {
-  color: #ffffff; /* Same text color */
-  text-decoration: none; /* Removes underline */
+  color: #9ab0e0; /* Same text color */
   border: none;
   cursor: pointer;
   transition: background-color 0.3s ease;
+}
+
+a img {
+  border: 2px solid transparent;
+  transition: border-color 0.3s ease;
+}
+
+a img:hover {
+  border-color: #4f4f71; /* Border color on hover */
+  cursor: pointer;
 }
 
 header {
@@ -203,7 +212,7 @@ section {
   line-height: 1.4;
 }
 
-.project-description .code-link {
+.project-description .project-link {
   display: inline-block;
   padding: 8px 16px;
   background-color: #007bff;
@@ -213,7 +222,7 @@ section {
   transition: background-color 0.3s;
 }
 
-.project-description .code-link:hover {
+.project-description .project-link:hover {
   background-color: #0056b3;
 }
 

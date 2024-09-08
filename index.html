@@ -54,10 +54,20 @@
           </ul>
         </div>
         <div class="about-right">
-          <p>There live the blind texts far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in bookmarksgrove there live the blind texts far from the countries.</p>
-          <p>Far far away, behind the word mountains, Quos quia provident consequuntur culpa facere ratione maxime commodi voluptates id repellat velit eaque aspernatur expedita. Possimus itaque adipisci there live the blind texts from the countries Vokalia and Consonantia, there live the blind texts. Quos quia provident consequuntur culpa facere ratione maxime commodi voluptates id repellat velit eaque aspernatur expedita. Possimus itaque adipisci.</p>
+          <p>
+            Hello! My name is August and I’m a 20 year old  junior at Trinity University studying 
+            Computer Science and Physics (as well as some math 🙂).
+          </p>
+          <p>
+            I’m from Austin, Texas and have lived there my whole life. 
+            I started programming my Sophomore year of highschool and have been doing it ever since. 
+            I have experience in C/C++, Python, Java, HTML/CSS/JavaScript and I especially love 
+            topics such as theoretical computer science and low-level programming. In my free time I enjoy working on 
+            projects such as physics simulations and audio plugins. 
+            I also love playing the piano, the organ, and producing music 🎵. 
+          </p>
           <ul class="resume-link">
-            <a href="#" target="_blank">View Resume</a>
+            <a href="static/August_Herron_Resume.pdf" target="_blank">View Resume</a>
           </ul>
         </div>
       </div>
@@ -68,28 +78,60 @@
   <section id="projects">
     <h2>Projects</h2>
     
-    <!-- Project 1 -->
+    <!-- Double Pendulum Project -->
     <div class="project-row">
       <div class="project-description">
-        <h3>Project Title 1</h3>
-        <p>This is a description of the project. It explains what the project does and any interesting details.</p>
-        <p>This is a description of the project. It explains what the project does and any interesting details.
-          This is a description of the project. It explains what the project does and any interesting details.
-          This is a description of the project. It explains what the project does and any interesting details.
-          This is a description of the project. It explains what the project does and any interesting details.
-          This is a description of the project. It explains what the project does and any interesting details.
-          This is a description of the project. It explains what the project does and any interesting details.
-          This is a description of the project. It explains what the project does and any interesting details.
+        <h3>Chaotic Pendulum Simulation</h3>
+        <p>A double pendulum simulation website
+          showcasing the double pendulum system and chaotic dynamics. </p>
+        <p> The <a href="https://en.wikipedia.org/wiki/Double_pendulum" target="_blank">double pendulum</a> 
+          or chaotic pendulum, is a system that comprises
+          of a pendulum attached to the end of another pendulum. This system 
+          is governed by a set of coupled non-linear ordinary differential equations that
+          cannot be solved analytically. In my simulation I implement 
+          <a href="https://en.wikipedia.org/wiki/Runge%E2%80%93Kutta_methods" target="_blank">fourth-order Runge-Kutta (RK4)</a> integration
+          to numerically solve the differential equations. The website showcases the derivation of the equations
+          of motion using the <a href="https://en.wikipedia.org/wiki/Lagrangian_mechanics" target="_blank">Lagrangian formalism</a> 
+          as well as phase-portraits for the system.
         </p>
-        <a href="src\projects\double-pendulum\index.html" class="code-link">View Code</a>
+        <a href="src\projects\double-pendulum\index.html" class="project-link">View Project</a>
+        <a href="https://github.com/augustryder/Chaotic-Pendulum" class="project-link" target="_blank">Source Code</a>
       </div>
       <div class="project-image">
-        <img src="project1.jpg" alt="Project 1 Image">
+        <a href="src\projects\double-pendulum\index.html" class="project-image-link">
+          <img src="static/dpendulum.png" alt="Project 1 Image">
+        </a>
       </div>
     </div>
-    
-    <!-- Project 2 -->
+
+    <!-- Linear Regression Project -->
     <div class="project-row">
+      <div class="project-description">
+        <h3>Linear Regression ML Model</h3>
+        <p>
+          Machine learning model built from scratch using pandas, Seaborn, and Matplotlib. 
+          It runs a <a href="https://en.wikipedia.org/wiki/Linear_regression">linear regression</a> on an insurance dataset in order to predict insurance 
+          cost based on patient BMI and smoker status.
+        </p>
+        <p>
+          First, a cost function is defined in terms of the parameters of a line (slope, y-intercept)
+          so that a lower cost results in a better fitting line. 
+          Then we minimize the cost function by calculating the <a href="https://en.wikipedia.org/wiki/Gradient">gradient</a>
+          of the cost function and then taking a step in the negative direction of the gradient. 
+          Doing this iteratively eventually leads you to a stable equilibrium on the surface of the
+          cost function. This point is likely the total minimum of the cost
+          function (or at least a local minimum). The line of best fit then uses the slope and y-intercept 
+          from that minima. 
+        </p>
+        <a href="https://github.com/augustryder/Linear-Regression-ML-Model" class="project-link" target="_blank">Source Code</a>
+      </div>
+      <div class="project-image">
+        <img src="static/linear-regression.png" alt="Project 2 Image">
+      </div>
+    </div>
+
+    <!-- Project Template -->
+    <!-- <div class="project-row">
       <div class="project-description">
         <h3>Project Title 2</h3>
         <p>This is a description of the project. It explains what the project does and any interesting details.</p>
@@ -101,18 +143,20 @@
           This is a description of the project. It explains what the project does and any interesting details.
           This is a description of the project. It explains what the project does and any interesting details.
         </p>
-        <a href="#" class="code-link">View Code</a>
+        <a href="#" class="project-link">Source Code</a>
       </div>
       <div class="project-image">
         <img src="project2.jpg" alt="Project 2 Image">
       </div>
     </div>
-    
-    <!-- You can add more project rows like the ones above -->
+     -->
+
   </section>
 
   <footer>
-    <p>&copy; 2024 Your Name</p>
+    <p>&copy; 2024 August Herron. All rights reserved.</p>
+    <a href="mailto:ryderherron@gmail.com">Email Me</a> |
+    <a href="https://github.com/augustryder" target="_blank">GitHub</a>
   </footer>
 
 </body>
