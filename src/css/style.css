@@ -12,26 +12,32 @@ body {
   scroll-behavior: smooth;
 }
 
+a {
+  color: #ffffff; /* Same text color */
+  text-decoration: none; /* Removes underline */
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
 header {
   height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
   text-align: center;
-  background-color: #111;
+  background-color: #000000;
 }
 
 header h1 {
   font-size: 4rem;
   margin-bottom: 1rem;
-}
-
-.social-links {
-  margin-top: 20px;
+  font-family: "Pixelify Sans", sans-serif;
 }
 
 .social-links a {
   margin: 0 15px;
+  text-decoration: none; /* Removes underline */
 }
 
 .social-links img {
@@ -46,7 +52,7 @@ section {
 
 /* About Section Styling */
 #about {
-  padding: 80px 20px;
+  padding: 80px 0px;
   background-color: #333;
   color: #fff;
   text-align: center; /* Centers the About Me heading */
@@ -54,39 +60,37 @@ section {
 
 #about h2 {
   font-size: 36px;
+  font-family: "Pixelify Sans", sans-serif;
+}
+
+.row1 {
+  padding-bottom: 40px;
 }
 
 /* Container for the about content */
 .about-content {
   display: flex;
   justify-content: space-between;
-  padding-top: 50px;
-  padding-bottom: 50px;
   gap: 40px;
   margin: 0 auto;  /* Centers the content horizontally */
-  width: 75%;      /* Set the width to 50% of the screen */
-}
-
-.row1 {
-  padding-bottom: 10px;
+  width: 55%;      /* Set the width to 50% of the screen */
+  font-family: 'Courier New', Courier, monospace; /* Same font as buttons */
 }
 
 /* Left and right sections */
 .about-left {
-  flex: 1;
+  text-align: left;
   padding: 10px;
 }
 
 .about-right {
-  flex: 1;
+  text-align: left;
+  padding: 10px;
 }
 
-.about-left {
+.about-right p {
   text-align: left;
-}
-
-.about-right {
-  text-align: left;
+  padding-bottom: 25px;
 }
 
 .info {
@@ -101,11 +105,33 @@ section {
 
 .first-block {
   width: 100px;
+  padding-right: 20px;
   font-weight: bold;
 }
 
 .second-block {
   flex: 1;
+}
+
+.resume-link a {
+  display: inline-block; /* Makes links behave like buttons */
+  padding: 10px 20px; /* Adjust padding as needed */
+  background-color: #313a46; /* Same background as your buttons */
+  color: #fefeff; /* Same text color */
+  text-decoration: none; /* Removes underline */
+  border: none;
+  border-radius: 5px; /* Rounded corners */
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  font-family: 'Courier New', Courier, monospace; /* Same font as buttons */
+}
+
+.resume-link a:hover {
+  background-color: #4f4f71; /* Hover effect, matching buttons */
+}
+
+.resume-link a:active {
+  background-color: #2b2b40; /* Active state */
 }
 
 /* Responsive Design */
@@ -137,13 +163,15 @@ section {
 
 /* General styling for the Projects section */
 #projects {
-  padding: 40px;
+  padding: 80px 250px;
   background-color: #000000;
 }
 
 #projects h2 {
   text-align: center;
   margin-bottom: 30px;
+  font-size: 36px;
+  font-family: "Pixelify Sans", sans-serif;
 }
 
 /* Styling for each project row */
@@ -151,16 +179,17 @@ section {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 40px;
+  margin-bottom: 60px;
   padding: 20px;
-  border: 1px solid #ddd;
-  background-color: #10113b;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  box-shadow: 0 4px 8px rgba(245, 11, 11, 0.1);
+  font-family: 'Courier New', Courier, monospace; /* Same font as buttons */
 }
 
 /* Description box (left side) */
 .project-description {
-  width: 45%;  /* Takes up 45% of the row width */
+  width: 40%;  /* Takes up 45% of the row width */
+  text-align: left;
+  padding-right: 30px;
 }
 
 .project-description h3 {
@@ -170,7 +199,7 @@ section {
 
 .project-description p {
   margin-bottom: 15px;
-  font-size: 1.1em;
+  font-size: 1.0em;
   line-height: 1.4;
 }
 
@@ -190,7 +219,7 @@ section {
 
 /* Project image (right side) */
 .project-image {
-  width: 45%;  /* Takes up 45% of the row width */
+  width: 60%;  /* Takes up 45% of the row width */
 }
 
 .project-image img {
