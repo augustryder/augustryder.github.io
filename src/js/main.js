@@ -121,12 +121,10 @@ document.addEventListener('DOMContentLoaded', function() {
         title.style.animation = 'none';
         
         setTimeout(() => {
-            title.style.animation = 'typing 3s steps(20, end)';
+            title.style.animation = 'typing 2.4s steps(20, end)';
             title.style.width = '100%';
         }, 2500); // Start after loading animation completes
     }
-    
-
     
 
     
@@ -163,44 +161,11 @@ document.addEventListener('DOMContentLoaded', function() {
         document.body.appendChild(loader);
         
         setTimeout(() => {
-            loader.style.opacity = '0';
-            setTimeout(() => {
-                loader.remove();
-            }, 500);
-        }, 1000);
+            loader.remove();
+        }, 2000);
     });
     
-    // Add mystical scroll indicator
-    const scrollIndicator = document.createElement('div');
-    scrollIndicator.style.position = 'fixed';
-    scrollIndicator.style.right = '20px';
-    scrollIndicator.style.top = '50%';
-    scrollIndicator.style.transform = 'translateY(-50%)';
-    scrollIndicator.style.width = '4px';
-    scrollIndicator.style.height = '100px';
-    scrollIndicator.style.background = '#2d0a2d';
-    scrollIndicator.style.borderRadius = '2px';
-    scrollIndicator.style.zIndex = '1000';
-    scrollIndicator.style.opacity = '0.6';
-    scrollIndicator.style.border = '1px solid #8a2be2';
-    
-    const scrollProgress = document.createElement('div');
-    scrollProgress.style.width = '100%';
-    scrollProgress.style.background = '#8a2be2';
-    scrollProgress.style.borderRadius = '2px';
-    scrollProgress.style.transition = 'height 0.3s ease';
-    scrollProgress.style.height = '0%';
-    scrollProgress.style.boxShadow = '0 0 6px #8a2be2';
-    
-    scrollIndicator.appendChild(scrollProgress);
-    document.body.appendChild(scrollIndicator);
-    
-    window.addEventListener('scroll', function() {
-        const scrollTop = window.pageYOffset;
-        const docHeight = document.body.scrollHeight - window.innerHeight;
-        const scrollPercent = (scrollTop / docHeight) * 100;
-        scrollProgress.style.height = scrollPercent + '%';
-    });
+
     
     // Add mystical tooltips
     document.querySelectorAll('[title]').forEach(element => {
