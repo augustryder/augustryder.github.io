@@ -3,172 +3,339 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>August Herron Portfolio</title>
+  <title>August Herron - Portfolio</title>
   <link rel="icon" type="image/x-icon" href="static/favicon.ico">
   <link rel="stylesheet" href="src/css/style.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=UnifrakturMaguntia&family=MedievalSharp&family=Orbitron:wght@400;700;900&display=swap" rel="stylesheet">
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-BX2SWN09GW"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
-
     gtag('config', 'G-BX2SWN09GW');
   </script>
 </head>
 <body>
+  <!-- Audio elements for ethereal sound effects -->
+  <audio id="bellSound" preload="auto">
+    <source src="data:audio/wav;base64,UklGRnoGAABXQVZFZm10IBAAAAABAAEAQB8AAEAfAAABAAgAZGF0YQoGAACBhYqFbF1fdJivrJBhNjVgodDbq2EcBj+a2/LDciUFLIHO8tiJNwgZaLvt559NEAxQp+PwtmMcBjiR1/LMeSwFJHfH8N2QQAoUXrTp66hVFApGn+DyvmwhBSuBzvLZiTYIG2m98OScTgwOUarm7blmGgU7k9n1unEiBC13yO/eizEIHWq+8+OWT" type="audio/wav">
+  </audio>
+  <audio id="pageTurnSound" preload="auto">
+    <source src="data:audio/wav;base64,UklGRnoGAABXQVZFZm10IBAAAAABAAEAQB8AAEAfAAABAAgAZGF0YQoGAACBhYqFbF1fdJivrJBhNjVgodDbq2EcBj+a2/LDciUFLIHO8tiJNwgZaLvt559NEAxQp+PwtmMcBjiR1/LMeSwFJHfH8N2QQAoUXrTp66hVFApGn+DyvmwhBSuBzvLZiTYIG2m98OScTgwOUarm7blmGgU7k9n1unEiBC13yO/eizEIHWq+8+OWT" type="audio/wav">
+  </audio>
+  <audio id="scrollSound" preload="auto">
+    <source src="data:audio/wav;base64,UklGRnoGAABXQVZFZm10IBAAAAABAAEAQB8AAEAfAAABAAgAZGF0YQoGAACBhYqFbF1fdJivrJBhNjVgodDbq2EcBj+a2/LDciUFLIHO8tiJNwgZaLvt559NEAxQp+PwtmMcBjiR1/LMeSwFJHfH8N2QQAoUXrTp66hVFApGn+DyvmwhBSuBzvLZiTYIG2m98OScTgwOUarm7blmGgU7k9n1unEiBC13yO/eizEIHWq+8+OWT" type="audio/wav">
+  </audio>
+
+
 
   <!-- Section 1: Header with Name and Links -->
-  <header id="home">
+  <header id="home" class="medieval-header">
     <div class="header-content">
-      <h1>August Herron</h1>
-      <ul class="social-links">
-        <a href="https://github.com/augustryder" target="_blank">
-          <img src="static/github.png" alt="GitHub">
-        </a>
-        <a href="https://www.linkedin.com/in/august-herron-023734320/" target="_blank">
-          <img src="static/linkedin.png" alt="LinkedIn">
-        </a>
-        <a href="mailto:ryderherron@gmail.com" target="_blank">
-          <img src="static/email.png" alt="Email">
-        </a>
-      </ul>
+      <h1 class="medieval-title">August Herron</h1>
+      <div class="social-links stone-links">
+        <a href="https://github.com/augustryder" target="_blank" class="skill-stone social-link" data-sound="bell" style="font-size: 0.95rem; padding: 0.3em 1em;">GitHub</a>
+        <a href="https://www.linkedin.com/in/august-herron-023734320/" target="_blank" class="skill-stone social-link" data-sound="bell" style="font-size: 0.95rem; padding: 0.3em 1em;">LinkedIn</a>
+        <a href="mailto:ryderherron@gmail.com" target="_blank" class="skill-stone social-link" data-sound="bell" style="font-size: 0.95rem; padding: 0.3em 1em;">Email</a>
+      </div>
     </div>
   </header>
 
   <!-- Section 2: About Me -->
-  <section id="about">
-    <div class="row1">
-      <h2>About Me</h2>
+  <section id="about" class="medieval-section">
+    <div class="section-header">
+      <h2 class="medieval-heading">About</h2>
     </div>
-    <div class="row2">
+    <div class="parchment-container">
       <div class="about-content">
         <div class="about-left">
-          <ul class="info">
-            <li><span class="first-block">Name:</span><span class="second-block">August Ryder Herron</span></li>
-            <li><span class="first-block">Phone:</span><span class="second-block">+1 512-717-1253</span></li>
-            <li><span class="first-block">Email:</span><span class="second-block">
-              <a href="mailto:ryderherron@gmail.com" target="_blank">ryderherron@gmail.com</a>
-              <a href="mailto:aherron1@trinity.edu.com" target="_blank">aherron1@trinity.edu</a>
+          <h3 class="scroll-title">Personal Information</h3>
+          <ul class="info-list">
+            <li><span class="label">Name:</span><span class="value">August Ryder Herron</span></li>
+            <li><span class="label">Phone:</span><span class="value">+1 512-717-1253</span></li>
+            <li><span class="label">Email:</span><span class="value">
+              <a href="mailto:ryderherron@gmail.com" target="_blank" data-sound="bell">ryderherron@gmail.com</a>
             </span></li>
-            <li><span class="first-block">GitHub:</span><span class="second-block">
-              <a href="https://github.com/augustryder" target="_blank">github.com/augustryder</a>
+            <li><span class="label">Website:</span><span class="value">
+              <a href="https://augustherron.com" target="_blank" data-sound="bell">augustherron.com</a>
             </span></li>
-            <li><span class="first-block">School:</span><span class="second-block">
-              <a href="https://www.trinity.edu/" target="_blank">Trinity University</a>
+            <li><span class="label">GitHub:</span><span class="value">
+              <a href="https://github.com/augustryder" target="_blank" data-sound="bell">github.com/augustryder</a>
             </span></li>
-            <li><span class="first-block">Studying:</span><span class="second-block">B.S. Computer Science B.S. Applied Physics Minor in Mathematics</span></li>
+            <li><span class="label">School:</span><span class="value">
+              <a href="https://www.trinity.edu/" target="_blank" data-sound="bell">Trinity University</a>
+            </span></li>
+            <li><span class="label">Degree:</span><span class="value">B.S. Computer Science (3.97 GPA), Minor in Physics, Minor in Mathematics</span></li>
+            <li><span class="label">Graduation:</span><span class="value">August 2022 – May 2026</span></li>
           </ul>
         </div>
         <div class="about-right">
+          <h3 class="scroll-title">Background</h3>
           <p>
-            Hello! My name is August and I’m a 20 year old junior at Trinity University studying 
-            Computer Science and Physics (as well as some math 🙂).
+            Hello! I'm August, a 20-year-old junior at Trinity University studying Computer Science and Physics, with a passion for mathematics.
           </p>
           <p>
-            I was born and raised in Texas, living in Austin most of my life. 
-            I started programming my sophomore year of highschool and it quickly became something
-            I was very passionate about. 
-            I love topics such as theoretical computer science and algorithms and I have experience 
-            with multiple programming languages such as C/C++, Python, Java, and HTML/CSS/JavaScript. 
-            In my free time I enjoy working on projects such as physics simulations and audio plugins. 
-            I also love playing the piano, the organ, and producing music 🎵. 
+            Born and raised in Texas, I discovered programming in my sophomore year of high school and it quickly became my passion. I love exploring theoretical computer science, algorithms, and complex systems.
           </p>
-          <ul class="resume-link">
-            <a href="static/August_Herron_Resume.pdf" target="_blank">View Resume</a>
-          </ul>
+          <p>
+            I have experience with multiple programming languages including C/C++, Python, Java, and web technologies. In my free time, I work on projects like physics simulations and audio plugins. I also enjoy playing piano, organ, and producing music.
+          </p>
+          <div class="resume-link">
+            <a href="static/August_Herron_Resume.pdf" target="_blank" class="medieval-button" data-sound="pageTurn">View Resume</a>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Section 3: Projects -->
-  <section id="projects">
-    <h2>Projects</h2>
+  <!-- Section 3: Experience
+  <section id="experience" class="medieval-section">
+    <div class="section-header">
+      <h2 class="medieval-heading">Experience</h2>
+    </div>
+    <div class="parchment-container">
+      <div class="experience-content">
+        
+        <div class="experience-section">
+          <h3 class="scroll-title">Education</h3>
+          <div class="experience-item">
+            <div class="experience-header">
+              <h4>Trinity University</h4>
+              <span class="location">San Antonio, TX</span>
+            </div>
+            <div class="experience-details">
+              <p class="degree">B.S. Computer Science (3.97 GPA), Minor in Physics, Minor in Mathematics</p>
+              <p class="period">August 2022 – May 2026</p>
+              <p class="coursework">Relevant Coursework: DSA, Compiler Construction, Operating Systems, Linear Algebra, Abstract Math</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="experience-section">
+          <h3 class="scroll-title">Work Experience</h3>
+          
+          <div class="experience-item">
+            <div class="experience-header">
+              <h4>Roblox</h4>
+              <span class="location">San Mateo, CA</span>
+            </div>
+            <div class="experience-details">
+              <p class="position">Software Engineer Intern</p>
+              <p class="period">May 2025 – August 2025</p>
+              <ul class="achievements">
+                <li>Developed new game engine APIs in C++ using both gRPC and SOAP to support the querying of internal engine status from remote production servers.</li>
+                <li>Engineered a containerized remote-profiling environment with Docker, isolating game engine profiling and diagnostic tasks from the host OS to guarantee hermetic and stable profiling sessions.</li>
+                <li>Enhanced an existing Python profiling client by integrating the new APIs and porting the tool to macOS, enabling cross-platform developer access to the debugging suite.</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="experience-item">
+            <div class="experience-header">
+              <h4>Trinity University</h4>
+              <span class="location">San Antonio, TX</span>
+            </div>
+            <div class="experience-details">
+              <p class="position">Teaching Assistant</p>
+              <p class="period">August 2024 – December 2024</p>
+              <ul class="achievements">
+                <li>Teaching assistant and tutor for Calculus III at Trinity's Quantitative Reasoning and Skills center.</li>
+                <li>Mentored over 50 students, leading weekly review sessions and providing one-on-one tutoring to support student development.</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="experience-item">
+            <div class="experience-header">
+              <h4>AECOM</h4>
+              <span class="location">Austin, TX</span>
+            </div>
+            <div class="experience-details">
+              <p class="position">Civil Engineering Intern</p>
+              <p class="period">June 2021 – July 2021</p>
+              <ul class="achievements">
+                <li>Civil engineering internship working on the Orange Line light rail system being designed in Austin, Texas.</li>
+                <li>Used CAD software to design a light rail station with three other interns.</li>
+                <li>Presented the proposed light rail station to the engineers and executives at AECOM and Capital Metro.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section> -->
+
+  <!-- Section 4: Projects -->
+  <section id="projects" class="medieval-section">
+    <div class="section-header">
+      <h2 class="medieval-heading">Projects</h2>
+    </div>
     
     <!-- Double Pendulum Project -->
-    <div class="project-row">
-      <div class="project-description">
-        <h3>Chaotic Pendulum Simulation</h3>
-        <p>A double pendulum simulation website
-          showcasing the double pendulum system and chaotic dynamics. </p>
-        <p> The <a href="https://en.wikipedia.org/wiki/Double_pendulum" target="_blank">double pendulum</a> 
-          or chaotic pendulum, is a system that comprises
-          of a pendulum attached to the end of another pendulum. This system 
-          is governed by a set of coupled non-linear ordinary differential equations that
-          cannot be solved analytically. In my simulation I implement 
-          <a href="https://en.wikipedia.org/wiki/Runge%E2%80%93Kutta_methods" target="_blank">fourth-order Runge-Kutta (RK4)</a> integration
-          to numerically solve the differential equations. The website showcases the derivation of the equations
-          of motion using the <a href="https://en.wikipedia.org/wiki/Lagrangian_mechanics" target="_blank">Lagrangian formalism</a> 
-          as well as phase-portraits for the system.
-        </p>
-        <a href="src\projects\double-pendulum\index.html" class="project-link">View Project</a>
-        <a href="https://github.com/augustryder/Chaotic-Pendulum" class="project-link" target="_blank">Source Code</a>
+    <div class="project-container">
+      <div class="project-parchment">
+        <div class="project-content">
+          <div class="project-description">
+            <h3 class="project-title">Chaotic Pendulum Simulation Web App</h3>
+            <div class="project-tech">C++, WebAssembly, Emscripten, TypeScript, PixiJS, Webpack</div>
+            <p>Built a double-pendulum simulation backend in C++, compiling to WebAssembly (Wasm) with Emscripten to achieve near-native execution speed for physics calculations in the browser.</p>
+            <p>Developed an interactive frontend with TypeScript and PixiJS to render the real-time pendulum animation and display corresponding phase-space portraits using Plotly.js.</p>
+            <p>Showcases a derivation of the governing equations of motion using Lagrangian Mechanics and implements Runge-Kutta (RK4) integration to numerically solve the set of coupled non-linear ODEs.</p>
+            <div class="project-links">
+              <a href="src/projects/double-pendulum/index.html" class="medieval-button" data-sound="pageTurn">View Project</a>
+              <a href="https://github.com/augustryder/Chaotic-Pendulum" class="medieval-button" target="_blank" data-sound="pageTurn">Source Code</a>
+            </div>
+          </div>
+          <div class="project-image">
+            <a href="src/projects/double-pendulum/index.html" class="project-image-link" data-sound="bell">
+              <img src="static/dpendulum.png" alt="Double Pendulum Simulation">
+            </a>
+          </div>
+        </div>
       </div>
-      <div class="project-image">
-        <a href="src\projects\double-pendulum\index.html" class="project-image-link">
-          <img src="static/dpendulum.png" alt="Project 1 Image">
-        </a>
+    </div>
+
+    <!-- Audio Plugin Project -->
+    <div class="project-container">
+      <div class="project-parchment">
+        <div class="project-content">
+          <div class="project-description">
+            <h3 class="project-title">Highpass/Lowpass Filter Audio Plugin</h3>
+            <div class="project-tech">C++, JUCE</div>
+            <p>Utilized DSP theory to build a custom highpass and lowpass filter audio plugin that can be used in digital audio workstations, such as Ableton Live, for use in audio processing and music production.</p>
+            <p>Built using the JUCE audio plugin development framework, utilizing Modern C++ practices.</p>
+            <div class="project-links">
+              <a href="https://github.com/augustryder/Highpass-Lowpass-Filter" class="medieval-button" data-sound="pageTurn">Source Code</a>
+            </div>
+          </div>
+          <!-- <div class="project-image">
+            <div class="placeholder-image">
+              <span>🎚️</span>
+            </div>
+          </div> -->
+        </div>
+      </div>
+    </div>
+
+    <!-- Compiler Project -->
+    <div class="project-container">
+      <div class="project-parchment">
+        <div class="project-content">
+          <div class="project-description">
+            <h3 class="project-title">Partial Compiler</h3>
+            <div class="project-tech">C, Assembly</div>
+            <p>Implemented components of a source to source compiler for the assembly language ILOC.</p>
+            <p>Designed and implemented a lexer, parser, register allocator, and instruction scheduler in the C programming language.</p>
+            <p>Designed a custom register allocator that beat a given reference allocator in reducing clock cycles.</p>
+            <div class="project-links">
+              <a href="https://github.com/augustryder/ILOC-Partial-Compiler" class="medieval-button" target="_blank" data-sound="pageTurn">Source Code</a>
+            </div>
+          </div>
+          <!-- <div class="project-image">
+            <div class="placeholder-image">
+              <span>🖥️</span>
+            </div>
+          </div> -->
+        </div>
       </div>
     </div>
 
     <!-- Linear Regression Project -->
-    <div class="project-row">
-      <div class="project-description">
-        <h3>Linear Regression ML Model</h3>
-        <p>
-          Machine learning model built from scratch using pandas, Seaborn, and Matplotlib. 
-          It runs a <a href="https://en.wikipedia.org/wiki/Linear_regression" target="_blank">linear regression</a> on an insurance dataset in order to predict insurance 
-          cost based on patient BMI and smoker status.
-        </p>
-        <p>
-          First, a cost function is defined in terms of the parameters of a line (slope, y-intercept)
-          so that a lower cost results in a better fitting line. 
-          Then we minimize the cost function by calculating the <a href="https://en.wikipedia.org/wiki/Gradient" target="_blank">gradient</a>
-          of the cost function and then taking a step in the negative direction of the gradient. 
-          Doing this iteratively eventually leads you to a stable equilibrium on the surface of the
-          cost function. This point is likely the total minimum of the cost
-          function (or at least a local minimum). The line of best fit then uses the slope and y-intercept 
-          from that minima. 
-        </p>
-        <a href="https://github.com/augustryder/Linear-Regression-ML-Model" class="project-link" target="_blank">Source Code</a>
-      </div>
-      <div class="project-image">
-        <img src="static/linear-regression.png" alt="Project 2 Image">
+    <div class="project-container">
+      <div class="project-parchment">
+        <div class="project-content">
+          <div class="project-description">
+            <h3 class="project-title">Linear Regression ML Model</h3>
+            <div class="project-tech">Python, Pandas, Seaborn, Matplotlib</div>
+            <p>Machine learning model built from scratch using pandas, Seaborn, and Matplotlib. It runs a linear regression on an insurance dataset in order to predict insurance cost based on patient BMI and smoker status.</p>
+            <p>First, a cost function is defined in terms of the parameters of a line (slope, y-intercept) so that a lower cost results in a better fitting line. Then we minimize the cost function by calculating the gradient of the cost function and then taking a step in the negative direction of the gradient.</p>
+            <div class="project-links">
+              <a href="https://github.com/augustryder/Linear-Regression-ML-Model" class="medieval-button" target="_blank" data-sound="pageTurn">Source Code</a>
+            </div>
+          </div>
+          <div class="project-image">
+            <img src="static/linear-regression.png" alt="Linear Regression Model">
+          </div>
+        </div>
       </div>
     </div>
-
-    <!-- Project Template -->
-    <!-- <div class="project-row">
-      <div class="project-description">
-        <h3>Project Title 2</h3>
-        <p>This is a description of the project. It explains what the project does and any interesting details.</p>
-        <p>This is a description of the project. It explains what the project does and any interesting details.
-          This is a description of the project. It explains what the project does and any interesting details.
-          This is a description of the project. It explains what the project does and any interesting details.
-          This is a description of the project. It explains what the project does and any interesting details.
-          This is a description of the project. It explains what the project does and any interesting details.
-          This is a description of the project. It explains what the project does and any interesting details.
-          This is a description of the project. It explains what the project does and any interesting details.
-        </p>
-        <a href="#" class="project-link">Source Code</a>
-      </div>
-      <div class="project-image">
-        <img src="project2.jpg" alt="Project 2 Image">
-      </div>
-    </div>
-     -->
-
   </section>
 
-  <footer>
-    <p>&copy; 2024 August Herron. All rights reserved.</p>
-    <a href="mailto:ryderherron@gmail.com">Email Me</a> |
-    <a href="https://github.com/augustryder" target="_blank">GitHub</a>
+  <!-- Section 5: Skills
+  <section id="skills" class="medieval-section">
+    <div class="section-header">
+      <h2 class="medieval-heading">Skills</h2>
+    </div>
+    <div class="parchment-container">
+      <div class="skills-content">
+        <div class="skills-categories">
+          <div class="skills-category">
+            <h3 class="scroll-title">Programming Languages</h3>
+            <div class="skills-grid">
+              <span class="skill-stone">C++</span>
+              <span class="skill-stone">C</span>
+              <span class="skill-stone">Python</span>
+              <span class="skill-stone">Go</span>
+              <span class="skill-stone">JavaScript/TypeScript</span>
+              <span class="skill-stone">Bash</span>
+            </div>
+          </div>
+          
+          <div class="skills-category">
+            <h3 class="scroll-title">Libraries & Frameworks</h3>
+            <div class="skills-grid">
+              <span class="skill-stone">gRPC</span>
+              <span class="skill-stone">SOAP</span>
+              <span class="skill-stone">JUCE</span>
+              <span class="skill-stone">TensorFlow</span>
+              <span class="skill-stone">Pandas</span>
+              <span class="skill-stone">NumPy</span>
+              <span class="skill-stone">Matplotlib</span>
+              <span class="skill-stone">Plotly</span>
+              <span class="skill-stone">PixiJS</span>
+            </div>
+          </div>
+          
+          <div class="skills-category">
+            <h3 class="scroll-title">Developer Tools</h3>
+            <div class="skills-grid">
+              <span class="skill-stone">Git</span>
+              <span class="skill-stone">Docker</span>
+              <span class="skill-stone">CMake</span>
+              <span class="skill-stone">SQL</span>
+              <span class="skill-stone">Linux</span>
+              <span class="skill-stone">GitHub</span>
+              <span class="skill-stone">TeamCity CI/CD</span>
+            </div>
+          </div>
+        </div>
+        
+        <div class="other-skills">
+          <h3 class="scroll-title">Other</h3>
+          <div class="skills-grid">
+            <span class="skill-stone">Digital Signal Processing (DSP)</span>
+            <span class="skill-stone">Systems Programming</span>
+            <span class="skill-stone">Mathematics</span>
+            <span class="skill-stone">Physics</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section> -->
+
+  <footer class="medieval-footer">
+    <div class="footer-content">
+      <p>&copy; 2024 August Herron. All rights reserved.</p>
+      <div class="footer-links">
+        <a href="mailto:ryderherron@gmail.com" data-sound="bell">Email Me</a> |
+        <a href="https://github.com/augustryder" target="_blank" data-sound="bell">GitHub</a>
+      </div>
+    </div>
   </footer>
 
+  <script src="src/js/main.js"></script>
 </body>
 </html>
