@@ -1,3 +1,334 @@
 @use "./base.scss";
+@use "./variables.scss" as *;
 
-// put your custom CSS here!
+// ============================================================
+// THE SCRIPTORIUM TERMINAL
+// Medieval manuscript meets retro computing aesthetic
+// ============================================================
+
+// --- Self-hosted Drop Cap Fonts (EB Garamond Initials) ---
+@font-face {
+  font-family: "EBGaramondInitialsF1";
+  src: url("/static/fonts/EBGaramond/EBGaramond-InitialsF1.woff2") format("woff2");
+  font-display: block;
+}
+
+@font-face {
+  font-family: "EBGaramondInitialsF2";
+  src: url("/static/fonts/EBGaramond/EBGaramond-InitialsF2.woff2") format("woff2");
+  font-display: block;
+}
+
+// --- Drop Cap Color Palette ---
+$dropcap-colors: (
+  "red": #c04040,
+  "maroon": #8b4049,
+  "orange": #c07030,
+  "gold": #b09020,
+  "green": #4a8a4a,
+  "teal": #3a8a7a,
+  "sky": #4a90c0,
+  "blue": #4060b0,
+  "purple": #7050a0,
+  "lavender": #8a70b0,
+  "pink": #b06090,
+);
+
+:root {
+  --font-dropcap-foreground: "EBGaramondInitialsF2", serif;
+  --font-dropcap-background: "EBGaramondInitialsF1", serif;
+  --dropcap-bg-color: var(--gray);
+
+  // Generate dropcap color variables
+  @each $name, $color in $dropcap-colors {
+    --dropcap-#{$name}: #{$color};
+  }
+}
+
+// --- Drop Cap Variables ---
+$dropcap-font-size: 3.95rem;
+$dropcap-vertical-offset: 0.15rem;
+$dropcap-min-height: 4.2rem;
+$dropcap-padding-right: 0.1em;
+
+
+// --- Layered Drop Caps (EB Garamond Initials) ---
+// Two-layer technique: ::before renders ornate background letter (F1),
+// ::first-letter renders solid foreground letter (F2) overlaid on top.
+article > p:first-of-type[data-first-letter] {
+  position: relative;
+  min-height: $dropcap-min-height;
+
+  // Background ornate letter (float spacer that controls text wrapping)
+  &::before {
+    content: attr(data-first-letter);
+    text-transform: uppercase;
+    float: left;
+    width: $dropcap-font-size;
+    font-size: $dropcap-font-size;
+    line-height: 1;
+    padding-right: $dropcap-padding-right;
+    padding-top: $dropcap-vertical-offset;
+    font-family: var(--font-dropcap-background);
+    color: var(--random-dropcap-color, var(--dropcap-bg-color));
+    cursor: text;
+  }
+
+  // Foreground solid letter, pulled back to overlap the background
+  &::first-letter {
+    margin-left: calc(-1 * #{$dropcap-font-size} - #{$dropcap-padding-right});
+    padding-top: $dropcap-vertical-offset;
+    text-transform: uppercase;
+    font-style: normal !important;
+    float: left;
+    pointer-events: none;
+    cursor: text;
+    color: var(--darkgray);
+    font-size: $dropcap-font-size;
+    line-height: 1;
+    padding-right: $dropcap-padding-right;
+    font-family: var(--font-dropcap-foreground);
+    font-weight: 500 !important;
+
+    // Firefox-specific adjustments
+    @supports (-moz-appearance: none) {
+      padding-top: 0.5rem !important;
+    }
+  }
+}
+
+// --- Typography: Oldstyle Numerals ---
+body {
+  font-variant-numeric: oldstyle-nums;
+  font-feature-settings: "liga" 1, "cv11" 1;
+  text-rendering: optimizeLegibility;
+}
+
+// Lining numerals in code, headers, and meta
+code, pre, h1, h2, h3, h4, h5, h6,
+.content-meta, .breadcrumb-container {
+  font-variant-numeric: lining-nums;
+}
+
+// --- Typography: Auto Small-Caps for 3+ Consecutive Capitals ---
+// Applied via JS (see dropcap-colors.inline.ts) using a <span> wrapper
+
+// --- Monospace UI Elements ---
+.breadcrumb-container,
+.search-bar,
+.darkmode,
+.reader-mode,
+.tag-list {
+  font-family: var(--codeFont) !important;
+}
+
+// --- Garamond UI Elements ---
+.content-meta,
+.page-footer,
+footer {
+  font-family: var(--headerFont) !important;
+}
+
+// --- Terminal-style Breadcrumbs ---
+.breadcrumb-container {
+  background: var(--highlight);
+  border: 1px solid var(--lightgray);
+  border-radius: 2px;
+  padding: 0.3rem 0.6rem;
+  font-size: 0.85rem;
+  letter-spacing: 0.02em;
+
+  &::before {
+    content: ">";
+    margin-right: 0.4rem;
+    color: var(--gray);
+    font-weight: bold;
+  }
+
+  a {
+    color: var(--secondary);
+
+    &:hover {
+      color: var(--tertiary);
+    }
+  }
+}
+
+// --- Ornamental Section Dividers ---
+article hr {
+  border: none;
+  text-align: center;
+  margin: 2rem 0;
+  overflow: visible;
+  height: auto;
+  background: none;
+
+  &::after {
+    content: "✦ — ✦ — ✦";
+    color: var(--gray);
+    font-size: 0.9rem;
+    letter-spacing: 0.3em;
+  }
+}
+
+// also override the hr between content and page-footer
+.center > hr {
+  border: none;
+  text-align: center;
+  margin: 2rem 0;
+  overflow: visible;
+  height: auto;
+  background: none;
+
+  &::after {
+    content: "✦ — ✦ — ✦";
+    color: var(--gray);
+    font-size: 0.9rem;
+    letter-spacing: 0.3em;
+  }
+}
+
+// --- Page Title (Sidebar) ---
+.page-title a {
+  letter-spacing: 0.05em;
+}
+
+// --- Article Titles ---
+.article-title {
+  font-family: var(--headerFont);
+  letter-spacing: 0.03em;
+  position: relative;
+  padding-bottom: 0.5rem;
+
+  &::after {
+    content: "";
+    display: block;
+    width: 60px;
+    height: 2px;
+    background: var(--tertiary);
+    margin-top: 0.5rem;
+  }
+}
+
+// --- All headings use the ornate header font ---
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--headerFont);
+}
+
+// --- Explorer Styling ---
+button.desktop-explorer h2,
+button.mobile-explorer h2 {
+  font-family: var(--headerFont);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-size: 0.85rem !important;
+}
+
+// --- Links ---
+article a {
+  text-decoration-style: dotted;
+  text-underline-offset: 3px;
+
+  &:hover {
+    text-decoration-style: solid;
+  }
+}
+
+// --- Blockquotes as Manuscript Marginalia ---
+blockquote {
+  border-left: 3px solid var(--tertiary) !important;
+  background: var(--highlight);
+  font-style: italic;
+  position: relative;
+  padding: 0.8rem 1rem;
+
+  &::before {
+    content: "※";
+    position: absolute;
+    left: -1.5rem;
+    top: 0.6rem;
+    color: var(--tertiary);
+    font-size: 1.2rem;
+    font-style: normal;
+  }
+}
+
+// --- Code Blocks (Terminal feel) ---
+pre {
+  border: 1px solid var(--lightgray) !important;
+  position: relative;
+
+  &::before {
+    content: "$ _";
+    display: block;
+    font-family: var(--codeFont);
+    font-size: 0.7rem;
+    color: var(--gray);
+    padding-bottom: 0.3rem;
+    margin-bottom: 0.3rem;
+    border-bottom: 1px solid var(--lightgray);
+    letter-spacing: 0.1em;
+  }
+}
+
+// --- Tags ---
+a.internal.tag-link {
+  font-family: var(--codeFont);
+  font-size: 0.8rem;
+  padding: 0.15rem 0.5rem;
+  border: 1px solid var(--lightgray);
+  border-radius: 2px;
+  background: var(--highlight);
+  letter-spacing: 0.02em;
+}
+
+// --- Footer ---
+footer {
+  font-size: 0.8rem;
+  letter-spacing: 0.05em;
+
+  &::before {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 1px;
+    background: linear-gradient(
+      to right,
+      transparent,
+      var(--lightgray),
+      transparent
+    );
+    margin-bottom: 1rem;
+  }
+}
+
+// --- Content Meta (dates, reading time) ---
+.content-meta {
+  font-size: 0.8rem;
+  letter-spacing: 0.04em;
+  opacity: 0.7;
+  text-transform: uppercase;
+}
+
+// --- Sidebar section headings ---
+.graph > h3,
+.backlinks > h3,
+.toc > h3 {
+  font-family: var(--headerFont);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-size: 0.8rem;
+}
+
+// --- Dark Mode glow on headings ---
+:root[saved-theme="dark"] {
+  article h1,
+  article h2,
+  article h3 {
+    text-shadow: 0 0 10px rgba(110, 148, 178, 0.15);
+  }
+
+  a:hover {
+    text-shadow: 0 0 6px rgba(110, 148, 178, 0.2);
+  }
+}

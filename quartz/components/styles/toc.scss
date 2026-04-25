@@ -56,6 +56,11 @@ ul.toc-content.overflow {
     &.in-view {
       opacity: 0.75;
     }
+    &.active {
+      opacity: 1;
+      color: var(--secondary);
+      text-shadow: 0 0 0.01px currentColor; // Fake bold without layout shift
+    }
   }
 
   @for $i from 0 through 6 {
