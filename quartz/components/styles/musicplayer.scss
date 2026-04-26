@@ -1,0 +1,121 @@
+@use "../../styles/variables.scss" as *;
+
+.music-player {
+  border: 1px solid var(--lightgray);
+  border-radius: 5px;
+  padding: 0.75rem;
+  margin: 0.5em 0;
+  box-sizing: border-box;
+
+  .music-player-info {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 0.5rem;
+    overflow: hidden;
+
+    .music-player-track-name {
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--dark);
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .music-player-track-artist {
+      font-size: 0.75rem;
+      color: var(--gray);
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+  }
+
+  .music-player-controls {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    margin-bottom: 0.5rem;
+
+    button {
+      background: none;
+      border: none;
+      cursor: pointer;
+      color: var(--darkgray);
+      padding: 0.25rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      transition: color 0.2s ease, background-color 0.2s ease;
+
+      &:hover {
+        color: var(--dark);
+        background-color: var(--lightgray);
+      }
+    }
+
+    .music-player-play {
+      width: 36px;
+      height: 36px;
+      border: 1.5px solid var(--darkgray);
+
+      &:hover {
+        border-color: var(--dark);
+      }
+
+      .pause-icon {
+        display: none;
+      }
+    }
+  }
+
+  &.playing .music-player-controls .music-player-play {
+    .play-icon {
+      display: none;
+    }
+    .pause-icon {
+      display: block;
+    }
+  }
+
+  .music-player-progress {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+
+    .music-player-time {
+      font-size: 0.7rem;
+      color: var(--gray);
+      min-width: 2.5em;
+      font-variant-numeric: tabular-nums;
+
+      &.current {
+        text-align: right;
+      }
+    }
+
+    .music-player-bar {
+      flex: 1;
+      height: 4px;
+      background: var(--lightgray);
+      border-radius: 2px;
+      cursor: pointer;
+      position: relative;
+      overflow: hidden;
+
+      .music-player-bar-fill {
+        height: 100%;
+        background: var(--secondary);
+        border-radius: 2px;
+        width: 0%;
+        transition: width 0.1s linear;
+      }
+
+      &:hover .music-player-bar-fill {
+        background: var(--tertiary);
+      }
+    }
+  }
+}

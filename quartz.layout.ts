@@ -1,6 +1,16 @@
 import { PageLayout, SharedLayout } from "./quartz/cfg"
 import * as Component from "./quartz/components"
 
+const musicPlayerConfig = {
+  tracks: [
+    {
+      name: "In the Maze Park",
+      artist: "AFX",
+      src: "/static/music/AFX-In-the-Maze-Park.mp3",
+    },
+  ],
+}
+
 // components shared across all pages
 export const sharedPageComponents: SharedLayout = {
   head: Component.Head(),
@@ -45,6 +55,7 @@ export const defaultContentPageLayout: PageLayout = {
   ],
   right: [
     Component.Graph(),
+    Component.MusicPlayer(musicPlayerConfig),
     Component.DesktopOnly(Component.TableOfContents()),
     Component.Backlinks(),
   ],
