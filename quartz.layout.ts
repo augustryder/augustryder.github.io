@@ -6,7 +6,7 @@ const musicPlayerConfig = {
     {
       name: "In the Maze Park",
       artist: "AFX",
-      src: "/static/music/AFX-In-the-Maze-Park.mp3",
+      src: "/static/music/AFX-In-The-Maze-Park.mp3",
     },
   ],
 }
