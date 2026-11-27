@@ -9,6 +9,8 @@ import spaRouterScript from "../../components/scripts/spa.inline"
 import popoverScript from "../../components/scripts/popover.inline"
 // @ts-ignore
 import prefetchScript from "../../components/scripts/prefetch.inline"
+// @ts-ignore
+import customScript from "../../components/scripts/custom.inline"
 import baseStyles from "../../styles/base.scss"
 import customStyles from "../../styles/custom.scss"
 import popoverStyle from "../../components/styles/popover.scss"
@@ -98,6 +100,9 @@ async function joinScripts(scripts: string[]): Promise<string> {
 
 function addGlobalPageResources(ctx: BuildCtx, componentResources: ComponentResources) {
   const cfg = ctx.cfg.configuration
+
+  // site-specific scripts (drop caps, active TOC entry)
+  componentResources.afterDOMLoaded.push(customScript)
 
   // popovers
   if (cfg.enablePopovers) {
