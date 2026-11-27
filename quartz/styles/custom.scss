@@ -221,12 +221,8 @@ article hr {
 }
 
 // --- All headings use the ornate header font ---
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
+// (custom.scss is unlayered in v5, so exclude the page title — it's an h2 with its own font)
+:is(h1, h2, h3, h4, h5, h6):not(.page-title) {
   font-family: var(--headerFont);
 }
 
