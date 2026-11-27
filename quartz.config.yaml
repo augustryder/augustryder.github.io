@@ -70,7 +70,6 @@ plugins:
     options:
       enableInHtmlEmbed: false
       enableCheckbox: true
-      strictLineBreaks: true
     order: 40
   - source: "@quartz-community/github-flavored-markdown"
     enabled: true
@@ -168,7 +167,7 @@ plugins:
       position: beforeBody
       priority: 10
   - source: "@quartz-community/content-meta"
-    enabled: false
+    enabled: true
     layout:
       position: beforeBody
       priority: 20
@@ -236,7 +235,7 @@ plugins:
     options: {}
     order: 50
   - source: "@quartz-community/note-properties"
-    enabled: false
+    enabled: true
     options:
       includeAll: false
       includedProperties:
