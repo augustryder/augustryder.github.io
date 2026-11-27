@@ -199,6 +199,12 @@ article hr {
 }
 
 // --- Page Title (Sidebar) ---
+// Quartz 5 emits an unlayered `h1–h6 { font-family: <header font> }` rule, which overrides the
+// page title's (layered) title font since the title is an h2. Restate it here.
+.page-title {
+  font-family: var(--titleFont);
+}
+
 .page-title a {
   letter-spacing: 0.05em;
 }
